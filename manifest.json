@@ -1,0 +1,60 @@
+{
+	"manifest_version": 2,
+	"name": "SEO Tools Extension 01",
+	"version": "3.5.0.6",
+	"description": "Amazon & SEO Tools Sharing Service.",
+	"homepage_url": "https://vipsetoolz.com/",
+	"icons": {
+	  "48": "icons/ico-48.png",
+	  "96": "icons/ico-96.png"
+	},
+	"browser_action": {
+	  "default_icon": "icons/ico-32.png",
+	  "default_title": "SEO Tools Extension 01",
+	  "default_popup": "dashboard/dashboard.html"
+	},
+	"content_scripts": [
+	  {
+		"matches": [
+		  "*://*/*",
+		  "<all_urls>"
+
+		],
+		"js": [
+		  "content/script.js"
+		],
+		"run_at": "document_end"
+	  }
+	],
+
+	"permissions": [
+	  "storage",
+	  "webRequest",
+	  "webRequestBlocking",
+	  "notifications",
+	  "cookies",
+	  "tabs",
+	  "alarms",
+	  "background",
+	  "*://*/*",
+	  "activeTab",
+	  "webNavigation",
+	  "contextMenus",
+	  "bookmarks",
+	  "management",
+	  "browsingData",
+	  "unlimitedStorage",
+	  "proxy",
+	  "idle",
+	  "http://*/*",
+      "https://*/*",
+	  "<all_urls>"
+	],
+	"content_security_policy": "script-src 'self' ; object-src 'self'",
+	"background": {
+	  "page": "background.html"
+	},
+	"web_accessible_resources": [
+	  "dashboard.html"
+	]
+  }
